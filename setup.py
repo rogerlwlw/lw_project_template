@@ -5,6 +5,7 @@ Created on Thu Aug 13 14:09:32 2020
 @author: rogerluo
 """
 
+# for 'xxx' project replace 'project_lib' with project name 'xxx'
 
 # build dist
 # source dist
@@ -74,6 +75,7 @@ setup(
         'imbalanced-learn>=0.4.0',
         'mlens>=0.2.3',
         'scikit-optimize',
+        'sphinx_rtd_theme',
     ],
     
     extras_require={
