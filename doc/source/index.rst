@@ -11,7 +11,7 @@ Welcome to project_lib's documentation!
    :caption: heading
    
    chapter1
-   chapter2
+   api
 
 
 

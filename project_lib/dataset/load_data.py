@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-1)load datafile in dataset module under 'data' folder.
-
-2)by dault a DataFrame object will be loaded.
-
-3)the datafile should be 2D matrix with 'y' label as the target label, supported
-format are ['.csv', '.xlsx', '.pkl']
+The :mod:`load_data` module offers function to load 'data' 
+in 'dataset/data' folder, supported formats are 
+['.csv', '.xlsx', '.pkl']. By dault a DataFrame object will be returned. 
+The DataFrame should have a column labled as 'y' as the target class
 
 Created on Tue Dec 10 17:42:49 2019
 
@@ -24,19 +22,21 @@ data_path = os.path.join(file_path, 'data')
 def get_local_data(data_name=None, all_datafile=False, rel_path=None):
     '''return data as DataFrame 
     
-    data_name:
+    data_name :
         file name of data to be loaded, by default stored as .csv in 'data' 
-        folder, suffix of file must be given
-    rel_path:
-        subfoler of 'data' folder to search from, default None will search all
+        folder, suffix must be included
         
-    return
-    ----
-        if all_datafile is True then, load all file in 'data' folder
-        else:
-            if data_name is None, then return list of filename that could 
-            be loaded
-            if data_name is not None, then load that datafile
+    rel_path :
+        subfoler of 'data' folder to search from, default None will search all
+        folders recursively
+        
+    Return :
+        if all_dataname=True then, load all file in 'data' folder;
+        
+        if data_name=None, then return list of filename that could  be loaded;
+        
+        if data_name is not None, then load that data with 'data_name';
+        
     '''
     reader = Objs_management(data_path)
     if all_datafile is True:
@@ -99,7 +99,5 @@ def _remove_label(df):
 
 
 if __name__ == '__main__':
-    df = get_local_data('loan_short.csv')
-#    df.to_csv('mushrooms.csv', index=False)
-#    df2 = _remove_label(df)
-#    df2.to_csv('loan_credit2.csv', index=False)
+    pass
+
