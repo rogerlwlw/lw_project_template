@@ -130,10 +130,10 @@ extensions = [
 # file extensions to file types. For example:
 source_suffix = ['.rst', '.md']
 
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+# from recommonmark.parser import CommonMarkParser
+# source_parsers = {
+#     '.md': CommonMarkParser,
+# }
 
 
 # source_parsers
