@@ -19,20 +19,20 @@ import recommonmark
 from recommonmark.transform import AutoStructify
 
 
-# -- Project information -----------------------------------------------------
+#%% -- Project information -----------------------------------------------------
 
 project = 'project_lib'
 copyright = '2020, rogerluo'
 author = 'rogerluo'
 
-# # The full version, including alpha/beta/rc tags
-# from project_lib import __version__
-# version = __version__
-# # The full version, including alpha/beta/rc tags.
-# release = __version__
+# The full version, including alpha/beta/rc tags
+from project_lib import __version__
+version = __version__
+# The full version, including alpha/beta/rc tags.
+release = __version__
 
 
-# -- General configuration ---------------------------------------------------
+#%% -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -46,7 +46,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
-    'recommonmark',
 ]
 
 # source_suffix
@@ -54,7 +53,11 @@ extensions = [
 # with this suffix as sources. The value can be a dictionary mapping 
 # file extensions to file types. For example:
 
-source_suffix = ['.md', '.rst']
+from recommonmark.parser import CommonMarkParser
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+source_suffix = ['.rst', '.md']
 
 # source_parsers
 # If given, a dictionary of parser classes for different source suffices. 
@@ -64,8 +67,6 @@ source_suffix = ['.md', '.rst']
 # is not in the dictionary will be parsed with the default reStructuredText 
 # parser.
 
-# For example:
-source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
 
 # master_doc
 # The document name of the “master” document, that is, 
@@ -90,9 +91,9 @@ templates_path = ['_templates']
 # place to add substitutions that should be available in every 
 # file (another being rst_prolog). An example:
 
-rst_epilog = """
-.. |psf| replace:: Rogerluo open source lib
-"""
+# rst_epilog = """
+# .. |psf| replace:: Rogerluo open source lib
+# """
 
 
 # rst_prolog
@@ -120,6 +121,10 @@ autosummary_generate = True
 
 autodoc_default_flags = ['members', 'inherited-members']
 
+# -- Options for HTMLHelp output ---------------------------------------------
+
+# Output file base name for HTML help builder.
+htmlhelp_basename = 'project_lib_doc'
 
 # -- Options for HTML output -------------------------------------------------
 
