@@ -42,32 +42,6 @@ author = 'rogerluo'
 master_doc = 'index'
 # The files to include
 
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.mathjax',
-]
-
-# source_suffix
-# The file extensions of source files. Sphinx considers the files 
-# with this suffix as sources. The value can be a dictionary mapping 
-# file extensions to file types. For example:
-
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-    '.md': CommonMarkParser,
-}
-source_suffix = ['.rst', '.md']
-
-# source_parsers
-# If given, a dictionary of parser classes for different source suffices. 
-# The keys are the suffix, the values can be either a class or a string giving 
-# a fully-qualified name of a parser class. The parser class can be either 
-# docutils.parsers.Parser or sphinx.parsers.Parser. Files with a suffix that 
-# is not in the dictionary will be parsed with the default reStructuredText 
-# parser.
-
-
 # master_doc
 # The document name of the “master” document, that is, 
 # the document that contains the root toctree directive. 
@@ -121,12 +95,12 @@ autosummary_generate = True
 
 autodoc_default_flags = ['members', 'inherited-members']
 
-# -- Options for HTMLHelp output ---------------------------------------------
+#%% -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'project_lib_doc'
 
-# -- Options for HTML output -------------------------------------------------
+#%% -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -140,3 +114,53 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+#%% -- Extension configuration -------------------------------------------------
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.mathjax',
+    'recommonmark',
+    'sphinx.ext.intersphinx',
+]
+
+# source_suffix
+# The file extensions of source files. Sphinx considers the files 
+# with this suffix as sources. The value can be a dictionary mapping 
+# file extensions to file types. For example:
+source_suffix = ['.rst', '.md']
+
+from recommonmark.parser import CommonMarkParser
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
+
+# source_parsers
+# If given, a dictionary of parser classes for different source suffices. 
+# The keys are the suffix, the values can be either a class or a string giving 
+# a fully-qualified name of a parser class. The parser class can be either 
+# docutils.parsers.Parser or sphinx.parsers.Parser. Files with a suffix that 
+# is not in the dictionary will be parsed with the default reStructuredText 
+# parser.
+github_doc_root =\
+'''https://github.com/rogerlwlw/lw_project_template/tree/master/doc/source/
+'''
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+            }, True)
+    app.add_transform(AutoStructify)
+    
+#%% -- intersphinx_mapping
+# This extension can generate automatic links to the documentation of 
+# objects in other projects.
+
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'sklearn' : ('https://scikit-learn.org/stable', None),
+    
+    }
+
