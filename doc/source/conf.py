@@ -12,12 +12,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('..\..\.'))
-
-import recommonmark
+sys.path.append(os.path.abspath('..\..\.'))
 from recommonmark.transform import AutoStructify
-
 
 #%% -- Project information -----------------------------------------------------
 
@@ -25,11 +21,11 @@ project = 'project_lib'
 copyright = '2020, rogerluo'
 author = 'rogerluo'
 
-# # The full version, including alpha/beta/rc tags
-# from project_lib import __version__
-# version = __version__
-# # The full version, including alpha/beta/rc tags.
-# release = __version__
+# The full version, including alpha/beta/rc tags
+from project_lib import __version__
+version = __version__
+# The full version, including alpha/beta/rc tags.
+release = __version__
 
 
 #%% -- General configuration ---------------------------------------------------
