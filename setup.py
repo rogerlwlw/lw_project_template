@@ -75,7 +75,8 @@ setup(
         'imbalanced-learn>=0.4.0',
         'mlens>=0.2.3',
         'scikit-optimize',
-        'sphinx_rtd_theme',
+        'sphinx',
+        
     ],
     
     extras_require={
