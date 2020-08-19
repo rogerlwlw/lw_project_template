@@ -54,11 +54,7 @@ extensions = [
 # with this suffix as sources. The value can be a dictionary mapping 
 # file extensions to file types. For example:
 
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.txt': 'restructuredtext',
-    '.md': 'markdown',
-}
+source_suffix = ['.md', '.rst']
 
 # source_parsers
 # If given, a dictionary of parser classes for different source suffices. 
