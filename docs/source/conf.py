@@ -85,9 +85,9 @@ language = None
 
 #%% -- Options for autodoc -------------------------------------------------
 # generate autosummary even if no references
-autosummary_generate = True
+# autosummary_generate = True
 
-autodoc_default_flags = ['members', 'inherited-members']
+# autodoc_default_flags = ['members', 'inherited-members']
 
 #%% -- Options for HTMLHelp output ---------------------------------------------
 
@@ -116,6 +116,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'recommonmark',
     'sphinx.ext.intersphinx',
+    'autoapi.extension',
 ]
 
 # source_suffix
@@ -157,4 +158,7 @@ intersphinx_mapping = {
     'sklearn' : ('https://scikit-learn.org/stable', None),
     
     }
+# %% autoapi
+
+autoapi_dirs = ['../../project_lib']
 
