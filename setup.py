@@ -38,7 +38,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="project_lib_rogerluo",
+    name="project_lib",
     version=__version__,
     packages=find_packages(),
     # This tells setuptools to install any data files it finds in your packages.

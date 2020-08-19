@@ -34,8 +34,6 @@ release = __version__
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-# The master toctree document.
-master_doc = 'index'
 # The files to include
 
 # master_doc
