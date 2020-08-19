@@ -25,11 +25,11 @@ project = 'project_lib'
 copyright = '2020, rogerluo'
 author = 'rogerluo'
 
-# The full version, including alpha/beta/rc tags
-from project_lib import __version__
-version = __version__
-# The full version, including alpha/beta/rc tags.
-release = __version__
+# # The full version, including alpha/beta/rc tags
+# from project_lib import __version__
+# version = __version__
+# # The full version, including alpha/beta/rc tags.
+# release = __version__
 
 
 #%% -- General configuration ---------------------------------------------------
