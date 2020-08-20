@@ -2,7 +2,7 @@
 """
 Created on Thu Aug 13 14:09:32 2020
 
-@author: Administrator
+@author: Rogerluo
 """
 from __future__ import print_function
 
@@ -28,9 +28,9 @@ def _ParseArguments(argv):
     
    
     # positional argument
-    parser.add_argument(
-            'arg1',
-            help='help message XXXX')
+    # parser.add_argument(
+    #         'arg1',
+    #         help='help message XXXX')
 
     parser.add_argument('-v',
                         '--version',

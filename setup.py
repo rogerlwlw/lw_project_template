@@ -63,7 +63,7 @@ setup(
     # Automatic Script Creation: add script entry points that could be called
     # through cmd
     entry_points={
-        'console_scripts': ['project_lib = project_lib.main:run_main'],
+        'console_scripts': ['project_lib = project_lib.__main__:run_main'],
     },
     install_requires=[
         'numpy>=1.15.0',
@@ -93,8 +93,11 @@ setup(
         'Topic :: Scientific/Engineering :: Artificial Intelligence'
     ],
     keywords=[
-        'pipeline optimization', 'hyperparameter optimization', 'data science',
-        'machine learning', 'Bayesian optimization'
+        'pipeline optimization', 
+        'hyperparameter optimization', 
+        'data science',
+        'machine learning', 
+        'Bayesian optimization'
     ],
 )
 

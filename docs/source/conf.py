@@ -10,15 +10,14 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.append(os.path.abspath('../../.'))
-from recommonmark.transform import AutoStructify
+# import os
+# import sys
+# sys.path.append(os.path.abspath('../../.'))
 
 #%% -- Project information -----------------------------------------------------
 
 project = 'project_lib'
-copyright = '2020, rogerluo'
+copyright = '2020, rogerluo https://github.com/rogerlwlw'
 author = 'rogerluo'
 
 # The full version, including alpha/beta/rc tags
@@ -83,12 +82,6 @@ templates_path = ['_templates']
 language = None
 
 
-#%% -- Options for autodoc -------------------------------------------------
-# generate autosummary even if no references
-# autosummary_generate = True
-
-# autodoc_default_flags = ['members', 'inherited-members']
-
 #%% -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
@@ -119,25 +112,15 @@ extensions = [
     'autoapi.extension',
 ]
 
-# source_suffix
+#%% -- source_suffix --
 # The file extensions of source files. Sphinx considers the files 
 # with this suffix as sources. The value can be a dictionary mapping 
 # file extensions to file types. For example:
 source_suffix = ['.rst', '.md']
 
-# from recommonmark.parser import CommonMarkParser
-# source_parsers = {
-#     '.md': CommonMarkParser,
-# }
 
-
-# source_parsers
-# If given, a dictionary of parser classes for different source suffices. 
-# The keys are the suffix, the values can be either a class or a string giving 
-# a fully-qualified name of a parser class. The parser class can be either 
-# docutils.parsers.Parser or sphinx.parsers.Parser. Files with a suffix that 
-# is not in the dictionary will be parsed with the default reStructuredText 
-# parser.
+# %% -- Configuring AutoStructify
+from recommonmark.transform import AutoStructify
 github_doc_root =\
 '''https://github.com/rogerlwlw/lw_project_template/tree/master/doc/source/
 '''
@@ -158,7 +141,42 @@ intersphinx_mapping = {
     'sklearn' : ('https://scikit-learn.org/stable', None),
     
     }
-# %% autoapi
+# %% -- autoapi configuration --
+# Autodoc-Style Directives
+# You can opt to write API documentation yourself using autodoc style directives. 
+# These directives work similarly to autodoc, but docstrings are retrieved through 
+# static analysis instead of through imports.
+
+# autoapi documentation root directory
+# autoapi_root = 'autoapi'
 
 autoapi_dirs = ['../../project_lib']
+
+autoapi_template_dir = ''
+
+# To remove the index page altogether, turn off the autoapi_add_toctree_entry 
+# configuration option:
+
+autoapi_add_toctree_entry = True
+
+# turning the automatic documentation generation off is as easy as 
+# disabling the autoapi_generate_api_docs configuration option:
+
+autoapi_generate_api_docs = True
+
+# get AutoAPI to keep its generated files around as a base to start from 
+# using the autoapi_keep_files option:
+
+# autoapi_keep_files = True
+
+# configuration options
+autoapi_options = ['members', 
+                   'show-inheritance', 
+                   'show-module-summary', 
+                   'inherited-members',
+                   'show-inheritance-diagram',
+                   ]
+
+autoapi_python_class_content = 'both'
+
 

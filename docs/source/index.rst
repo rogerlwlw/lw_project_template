@@ -8,10 +8,10 @@ Welcome to project_lib's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: heading
+   :caption: project_lib docs
    
-   chapter1
-   api
+   hello world
+   Hpyer links <edit cross_referrence>
 
 
 
@@ -20,4 +20,4 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
+* :ref:`search` 
