@@ -179,4 +179,6 @@ autoapi_options = ['members',
 
 autoapi_python_class_content = 'both'
 
+autoapi_member_order = 'groupwise'
+
 
