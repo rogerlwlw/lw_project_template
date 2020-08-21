@@ -9,7 +9,6 @@ from __future__ import print_function
 import argparse
 import sys
 import traceback
-
 import project_lib
 
 
@@ -59,15 +58,16 @@ def _ParseArguments(argv):
 
 def main(argv):
     """Main program.
+    
     Arguments:
-      argv: command-line arguments, such as sys.argv (including the program name
-        in argv[0]).
+        argv: command-line arguments, such as sys.argv (including the program 
+        name in argv[0]).
       
     Returns:
-      Zero on successful program termination, non-zero otherwise.
+        Zero on successful program termination, non-zero otherwise.
     """
     
-    args = _ParseArguments(argv)
+    args = _ParseArguments(argv) 
     # -- run program
     if args.version:
         print("project_lib version : {}".format(project_lib.__version__))
