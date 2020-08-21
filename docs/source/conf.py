@@ -17,7 +17,7 @@
 #%% -- Project information -----------------------------------------------------
 
 project = 'project_lib'
-copyright = '2020, rogerluo https://github.com/rogerlwlw'
+copyright = '2020, rogerluo'
 author = 'rogerluo'
 
 # The full version, including alpha/beta/rc tags
@@ -26,6 +26,12 @@ version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
 
+rst_epilog = """
+.. |author| replace:: Rogerluo www.baidu.com
+
+.. |pkg| replace:: `project_lib`
+
+"""
 
 #%% -- General configuration ---------------------------------------------------
 
@@ -162,7 +168,7 @@ autoapi_template_dir = ''
 # To remove the index page altogether, turn off the autoapi_add_toctree_entry 
 # configuration option:
 
-autoapi_add_toctree_entry = True
+# autoapi_add_toctree_entry = False
 
 # turning the automatic documentation generation off is as easy as 
 # disabling the autoapi_generate_api_docs configuration option:

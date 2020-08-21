@@ -25,14 +25,15 @@ def get_local_data(data_name=None, all_datafile=False, rel_path=None):
     data_name :
         file name of data to be loaded, by default stored as .csv in 'data' 
         folder, suffix must be included
-        
+    
+    all_datafile: bool
+        if all_datafile=True then, load all file in 'data' folder;
+                
     rel_path :
         subfoler of 'data' folder to search from, default None will search all
         folders recursively
         
     Return :
-        if all_dataname=True then, load all file in 'data' folder;
-        
         if data_name=None, then return list of filename that could  be loaded;
         
         if data_name is not None, then load that data with 'data_name';

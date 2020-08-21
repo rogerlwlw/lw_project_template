@@ -9,11 +9,14 @@ Welcome to project_lib's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: project_lib docs
+   :name: masterdoc
+   :numbered:
+   :glob:
    
-   hello world
-   Hpyer links <edit cross_referrence>
-
-
+   install
+   user guide
+   use cases
+   *
 
 Indices and tables
 ==================
