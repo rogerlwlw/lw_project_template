@@ -236,3 +236,7 @@ texinfo_documents = [
 #  labels are generated only for top level sections, and deeper sections 
 #  are not labeled. It defaults to None (disabled).
 # autosectionlabel_maxdepth = None
+
+# %% -- todo options
+todo_include_todos = True
+todo_link_only = False

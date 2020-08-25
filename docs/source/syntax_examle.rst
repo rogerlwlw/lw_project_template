@@ -25,6 +25,16 @@ show inserted image here
    :align: center
 
 
+.. todo::
+    
+    next, we're going to do ...
+    
+
+collect all todo items:
+
+.. todolist::    
+    
+
 .. _cross reference:
 
 cross reference
@@ -66,6 +76,8 @@ this is a [citation1]_
     Substitution
     -------------
     this package: |pkg| is  edited by |author|
+    
+    
 
 .. _literal_blocks:
 
