@@ -26,6 +26,8 @@ version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
 
+# %% -- substitution settings --
+# replace text could be refered by |name| everywhere wihin sphyinx docs
 rst_epilog = """
 .. |author| replace:: Rogerluo www.baidu.com
 
@@ -50,13 +52,13 @@ master_doc = 'index'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['./autoapi/index.rst']
 
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-
+# exclude_patterns = ['./index']
 
 # rst_epilog
 # A string of reStructuredText that will be included at the 
@@ -85,13 +87,13 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
+# language = 'zh_CN'
 language = None
-
 
 #%% -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'project_lib_doc'
+htmlhelp_basename = 'project_lib doc'
 
 #%% -- Options for HTML output -------------------------------------------------
 
@@ -158,17 +160,16 @@ intersphinx_mapping = {
 # These directives work similarly to autodoc, but docstrings are retrieved through 
 # static analysis instead of through imports.
 
-# autoapi documentation root directory
-# autoapi_root = 'autoapi'
-
 autoapi_dirs = ['../../project_lib']
+# autoapi documentation root directory
+autoapi_root = None
 
 autoapi_template_dir = ''
 
 # To remove the index page altogether, turn off the autoapi_add_toctree_entry 
 # configuration option:
 
-# autoapi_add_toctree_entry = False
+autoapi_add_toctree_entry = True
 
 # turning the automatic documentation generation off is as easy as 
 # disabling the autoapi_generate_api_docs configuration option:
@@ -192,4 +193,31 @@ autoapi_python_class_content = 'both'
 
 autoapi_member_order = 'groupwise'
 
+# %% --latex settings
 
+latex_engine = 'xelatex'
+
+latex_elements = {
+     
+}
+
+latex_show_urls = 'footnote'
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+    (master_doc, 'project_lib.tex', u'project_lib Documentation',
+     u'rogerluo', 'manual'),
+]
+
+# -- Options for Texinfo output -------------------------------------------
+
+# Grouping the document tree into Texinfo files. List of tuples
+# (source start file, target name, title, author,
+#  dir menu entry, description, category)
+texinfo_documents = [
+    (master_doc, 'project_lib', 'project_lib Documentation',
+     'Rogerluo', 'project_lib',
+     'Toolbox for machine learning.', 'Miscellaneous'),
+]

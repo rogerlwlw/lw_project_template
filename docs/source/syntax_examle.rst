@@ -14,12 +14,18 @@
 reST syntax example
 ====================
 
+Insert Image
+-------------
+.. figure:: showimage.jpg
+   :scale: 50 %
+   :align: center
+
 
 cross reference
 ----------------
 this is a **link** to internal file :doc:`main page <index>`
 
-this is a cross reference link to section :ref:`reflabel`
+this is a cross reference link to section :ref:`literal_blocks`
 
 refer to masterdoc :ref:`masterdoc`
 
@@ -29,14 +35,10 @@ this is a link to module :mod:`load_data`
 
 this is a link to python documentation :class:`zipfile.ZipFile`
 
-this is a link to sklearn :class:`sklearn.linear_model.Lasso`
 
 this is a hyper link to sphinx doc `sphinxdoc`_
 
 this is a hyper link to `sphinxdoc hyperlink <https://www.sphinx-doc.org/>`_
-
-
-.. _sphinxdoc: https://www.sphinx-doc.org/
 
 
 Footenote
@@ -51,12 +53,12 @@ this is f2 [#f2]_
 this is a [citation1]_
 
 
+.. 
+    Substitution
+    -------------
+    this package: |pkg| is  edited by |author|
 
-Substitution
--------------
-this package: |pkg| is  edited by |author|
-
-.. _reflabel:
+.. _literal_blocks:
 
 Literal blocks
 --------------
@@ -76,8 +78,9 @@ This is a normal text paragraph again.
    is a comment.
 
    Still in the comment.
+   
 
-admonitions provided By Docutils.
+Admonitions provided By Docutils.
 ----------------------------------------------------
 .. note::
     pay attention to this 
@@ -95,6 +98,7 @@ admonitions provided By Docutils.
     pay attention to this 
 
 
+.. _sphinxdoc: https://www.sphinx-doc.org/
 
 .. rubric:: Footnotes
 
@@ -103,11 +107,8 @@ admonitions provided By Docutils.
 .. [#f1] Text of the first footnote.
 .. [#f2] Text of the second footnote.
 
-.. rubric:: Citations
 
 .. [citation1] 
-    * Book1 
-    
-    * Book2
-    
+    * Book1     
+    * Book2    
     * Article1
