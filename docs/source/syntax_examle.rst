@@ -14,15 +14,22 @@
 reST syntax example
 ====================
 
+
 Insert Image
 -------------
+
+show inserted image here
+
 .. figure:: showimage.jpg
    :scale: 100 %
    :align: center
 
 
+.. _cross reference:
+
 cross reference
 ----------------
+
 this is a **link** to internal file :doc:`main page <index>`
 
 this is a cross reference link to section :ref:`literal_blocks`
@@ -34,6 +41,8 @@ this is a link to function :func:`get_local_data <project_lib.dataset.load_data.
 this is a link to module :mod:`load_data`
 
 this is a link to python documentation :class:`zipfile.ZipFile`
+
+refer by **section name**  :ref:`cross reference`
 
 
 this is a hyper link to sphinx doc `sphinxdoc`_
@@ -60,8 +69,10 @@ this is a [citation1]_
 
 .. _literal_blocks:
 
+
 Literal blocks
 --------------
+
 
 This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -80,8 +91,9 @@ This is a normal text paragraph again.
    Still in the comment.
    
 
-Admonitions provided By Docutils.
+Admonitions provided By Docutils
 ----------------------------------------------------
+
 .. note::
     pay attention to this 
     

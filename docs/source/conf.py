@@ -52,7 +52,7 @@ master_doc = 'index'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['./autoapi/index.rst']
+exclude_patterns = ['./autoapi/index.rst', ]
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -123,6 +123,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'autoapi.extension',
     "sphinx_rtd_theme",
+    "sphinx.ext.todo",
 ]
 
 #%% -- source_suffix --
@@ -162,7 +163,7 @@ intersphinx_mapping = {
 
 autoapi_dirs = ['../../project_lib']
 # autoapi documentation root directory
-autoapi_root = 'autoapi'
+autoapi_root = 'tech/autoapi'
 
 autoapi_template_dir = '_template'
 
@@ -221,3 +222,17 @@ texinfo_documents = [
      'Rogerluo', 'project_lib',
      'Toolbox for machine learning.', 'Miscellaneous'),
 ]
+
+#%% -- autosectionlabel --
+
+# True to prefix each section label with the name of the document it is in, 
+# followed by a colon. For example, index:Introduction for a section called 
+# Introduction that appears in document index.rst. Useful for avoiding 
+# when the same section heading appears in different documents.
+# autosectionlabel_prefix_document = True
+
+#  If set, autosectionlabel chooses the sections for labeling by its depth.
+#  For example, when set 1 to autosectionlabel_maxdepth, 
+#  labels are generated only for top level sections, and deeper sections 
+#  are not labeled. It defaults to None (disabled).
+# autosectionlabel_maxdepth = None

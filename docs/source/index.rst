@@ -11,7 +11,7 @@ Welcome to project_lib's documentation!
    install
    user guide
    use case
-   *
+   ./*
 
 
 Indices and tables
