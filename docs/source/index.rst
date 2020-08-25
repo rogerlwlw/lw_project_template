@@ -6,7 +6,6 @@ Welcome to project_lib's documentation!
    :maxdepth: 2
    :caption: project_lib docs
    :name: masterdoc
-   :numbered:
    :glob:
 
    install
@@ -18,6 +17,8 @@ Welcome to project_lib's documentation!
 Indices and tables
 ===================
 
-:ref:`genindex`
-:ref:`modindex`
-:ref:`search`
+#. :ref:`genindex`
+
+#. :ref:`modindex`
+
+#. :ref:`search`

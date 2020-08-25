@@ -162,9 +162,9 @@ intersphinx_mapping = {
 
 autoapi_dirs = ['../../project_lib']
 # autoapi documentation root directory
-autoapi_root = None
+autoapi_root = 'autoapi'
 
-autoapi_template_dir = ''
+autoapi_template_dir = '_template'
 
 # To remove the index page altogether, turn off the autoapi_add_toctree_entry 
 # configuration option:

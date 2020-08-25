@@ -17,7 +17,7 @@ reST syntax example
 Insert Image
 -------------
 .. figure:: showimage.jpg
-   :scale: 50 %
+   :scale: 100 %
    :align: center
 
 
