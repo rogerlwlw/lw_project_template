@@ -5,7 +5,7 @@ Created on Thu Aug 13 14:09:32 2020
 @author: rogerluo
 """
 
-# for 'xxx' project replace 'project_lib' with project name 'xxx'
+# for 'xxx' project replace 'projectlibxx' with project name 'xxx'
 
 # build dist
 # source dist
@@ -29,7 +29,7 @@ Created on Thu Aug 13 14:09:32 2020
 import re
 from setuptools import setup, find_packages
 
-for line in open('project_lib/__init__.py'):
+for line in open('projectlibxx/__init__.py'):
     match = re.match("__version__ *= *'(.*)'", line)
     if match:
         __version__, = match.groups()
@@ -38,7 +38,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="project_lib",
+    name="projectlibxx",
     version=__version__,
     packages=find_packages(),
     # This tells setuptools to install any data files it finds in your packages.
@@ -63,7 +63,7 @@ setup(
     # Automatic Script Creation: add script entry points that could be called
     # through cmd
     entry_points={
-        'console_scripts': ['project_lib = project_lib.__main__:run_main'],
+        'console_scripts': ['projectlibxx = projectlibxx.__main__:run_main'],
     },
     install_requires=[
         'numpy>=1.15.0',

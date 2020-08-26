@@ -16,12 +16,12 @@
 
 #%% -- Project information -----------------------------------------------------
 
-project = 'project_lib'
+project = 'projectlibxx'
 copyright = '2020, rogerluo'
 author = 'rogerluo'
 
 # The full version, including alpha/beta/rc tags
-from project_lib import __version__
+from projectlibxx import __version__
 version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
@@ -31,7 +31,7 @@ release = __version__
 rst_epilog = """
 .. |author| replace:: Rogerluo www.baidu.com
 
-.. |pkg| replace:: `project_lib`
+.. |pkg| replace:: `projectlibxx`
 
 """
 
@@ -93,7 +93,7 @@ language = None
 #%% -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'project_lib doc'
+htmlhelp_basename = 'projectlibxx doc'
 
 #%% -- Options for HTML output -------------------------------------------------
 
@@ -161,7 +161,7 @@ intersphinx_mapping = {
 # These directives work similarly to autodoc, but docstrings are retrieved through 
 # static analysis instead of through imports.
 
-autoapi_dirs = ['../../project_lib']
+autoapi_dirs = ['../../projectlibxx']
 # autoapi documentation root directory
 autoapi_root = 'tech/autoapi'
 
@@ -197,15 +197,6 @@ autoapi_member_order = 'groupwise'
 # %% --latex settings
 
 latex_engine = 'xelatex'
-latex_elements = {
-    'preamble': r'''
-    \\hypersetup{unicode=true}
-    \\usepackage{CJKutf8}
-    \\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
-    \\AtEndDocument{\\end{CJK}}
-    '''
-}
-
 
 latex_show_urls = 'footnote'
 
@@ -213,21 +204,71 @@ latex_show_urls = 'footnote'
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'project_lib.tex', u'project_lib Documentation',
-     u'rogerluo', 'manual'),
+    (master_doc, 'projectlibxx.tex', u'projectlibxx Documentation',
+     'rogerluo', 'manual'),
 ]
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+# latex_logo = None
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+latex_use_parts = True
+
+# Documents to append as an appendix to all manuals.
+# latex_appendices = []
+
+# -- Options for manual page output ---------------------------------------
+
+# If false, no module index is generated.
+# latex_domain_indices = True
+
+# One entry per manual page. List of tuples
+# (source start file, name, description, authors, manual section).
+man_pages = [('index', 'projectlibxx', 'Documentation',
+              ["Rogerluo"], 1)]
+
+# -- Options for Texinfo output -------------------------------------------
+# Grouping the document tree into Texinfo files. List of tuples
+# (source start file, target name, title, author,
+#  dir menu entry, description, category)
+texinfo_documents = [
+    ('index', 'projectlibxx', 'Documentation',
+     'Rogerluo', 'projectlibxx',
+     'Toolbox for machine learning.', 'Miscellaneous'),
+]
+
+latex_use_xindy = True
 
 # -- Options for Texinfo output -------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'project_lib', 'project_lib Documentation',
-     'Rogerluo', 'project_lib',
-     'Toolbox for machine learning.', 'Miscellaneous'),
-]
+# texinfo_documents = [
+#     (master_doc, 'test', u'test Documentation',
+#      author, 'test', 'One line description of project.',
+#      'Miscellaneous'),
+# ]
 
+# Documents to append as an appendix to all manuals.
+#
+# texinfo_appendices = []
+
+# If false, no module index is generated.
+#
+# texinfo_domain_indices = True
+
+# How to display URL addresses: 'footnote', 'no', or 'inline'.
+#
+# texinfo_show_urls = 'footnote'
+
+# If true, do not generate a @detailmenu in the "Top" node's menu.
+#
+# texinfo_no_detailmenu = False
+
+# -- A random example -----------------------------------------------------
 #%% -- autosectionlabel --
 
 # True to prefix each section label with the name of the document it is in, 

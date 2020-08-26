@@ -1,10 +1,10 @@
-Welcome to project_lib's documentation!
+Welcome to projectlibxx's documentation!
 ========================================
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: project_lib docs
+   :caption: projectlibxx docs
    :name: masterdoc
    :glob:
 

@@ -46,7 +46,7 @@ this is a cross reference link to section :ref:`literal_blocks`
 
 refer to masterdoc :ref:`masterdoc`
 
-this is a link to function :func:`get_local_data <project_lib.dataset.load_data.get_local_data>`
+this is a link to function :func:`get_local_data <projectlibxx.dataset.load_data.get_local_data>`
 
 this is a link to module :mod:`load_data`
 
@@ -69,7 +69,7 @@ this is f1 [#f1]_
 
 this is f2 [#f2]_
 
-this is a [citation1]_
+this is a [citation]_
 
 
 .. 
@@ -145,7 +145,5 @@ Admonitions provided By Docutils
 .. [#f2] Text of the second footnote.
 
 
-.. [citation1] 
-    * Book1     
-    * Book2    
-    * Article1
+.. [citation] 
+    Book1     
