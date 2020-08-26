@@ -20,11 +20,11 @@ Insert Image
 
 show inserted image here
 
-.. figure:: showimage.jpg
-   :scale: 100 %
+.. figure:: _static/_image/showimage.png
+   :scale: 45%
    :align: center
 
-
+   
 .. todo::
     
     next, we're going to do ...

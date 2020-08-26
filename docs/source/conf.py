@@ -124,6 +124,7 @@ extensions = [
     'autoapi.extension',
     "sphinx_rtd_theme",
     "sphinx.ext.todo",
+    'sphinx.ext.graphviz',
 ]
 
 #%% -- source_suffix --
@@ -187,10 +188,10 @@ autoapi_options = ['members',
                    'show-inheritance', 
                    'show-module-summary', 
                    'inherited-members',
-                   'show-inheritance-diagram',
+                   # 'show-inheritance-diagram',
                    ]
 
-autoapi_python_class_content = 'both'
+autoapi_python_class_content = 'class'
 
 autoapi_member_order = 'groupwise'
 
