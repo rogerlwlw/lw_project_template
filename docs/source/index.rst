@@ -11,14 +11,15 @@ Welcome to project_lib's documentation!
    install
    user guide
    use case
-   ./*
+   tech/autoapi/index
+   *
 
 
 Indices and tables
 ===================
 
-#. :ref:`genindex`
+* :ref:`genindex`
 
-#. :ref:`modindex`
+* :ref:`modindex`
 
-#. :ref:`search`
+* :ref:`search`

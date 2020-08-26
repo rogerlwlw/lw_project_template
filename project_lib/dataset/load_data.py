@@ -20,13 +20,13 @@ data_path = os.path.join(file_path, 'data')
 
 
 def get_local_data(data_name=None, all_datafile=False, rel_path=None):
-    '''return data as DataFrame 
+    '''read data file by filename from `data` folder, extension suffix included
     
     data_name :
         file name of data to be loaded, by default stored as .csv in 'data' 
         folder, suffix must be included
     
-    all_datafile: bool
+    all_datafile : bool
         if all_datafile=True then, load all file in 'data' folder;
                 
     rel_path :
@@ -34,9 +34,8 @@ def get_local_data(data_name=None, all_datafile=False, rel_path=None):
         folders recursively
         
     Return :
-        if data_name=None, then return list of filename that could  be loaded;
-        
-        if data_name is not None, then load that data with 'data_name';
+        if data_name=None, then return list of filename that could  be loaded
+        if data_name is not None, then load that data with 'data_name'
         
     '''
     reader = Objs_management(data_path)

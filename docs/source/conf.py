@@ -180,7 +180,7 @@ autoapi_generate_api_docs = True
 # get AutoAPI to keep its generated files around as a base to start from 
 # using the autoapi_keep_files option:
 
-# autoapi_keep_files = True
+autoapi_keep_files = True
 
 # configuration options
 autoapi_options = ['members', 
@@ -240,3 +240,12 @@ texinfo_documents = [
 # %% -- todo options
 todo_include_todos = True
 todo_link_only = False
+
+# %% doctest
+# extensions.append('sphinx.ext.doctest')
+# doctest_global_setup = '''
+# try:
+#     import pandas as pd
+# except ImportError:
+#     pd = None
+# '''

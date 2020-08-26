@@ -59,7 +59,7 @@ this is a hyper link to sphinx doc `sphinxdoc`_
 
 this is a hyper link to `sphinxdoc hyperlink <https://www.sphinx-doc.org/>`_
 
-
+    
 Footenote
 ---------
 
@@ -107,19 +107,32 @@ Admonitions provided By Docutils
 ----------------------------------------------------
 
 .. note::
+
     pay attention to this 
     
 .. warning::
+
     pay attention to this 
     
 .. danger::
+
     pay attention to this 
     
 .. tip::
+
     pay attention to this 
     
 .. important::
+
     pay attention to this 
+    
+.. hint::
+
+    write some contents here
+    
+
+    
+    
 
 
 .. _sphinxdoc: https://www.sphinx-doc.org/

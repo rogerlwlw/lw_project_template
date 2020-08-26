@@ -74,7 +74,7 @@ def main(argv):
         return 0    
     
 def run_main():
-    '''
+    '''run main func
     '''
     try:
         sys.exit(main(sys.argv))
