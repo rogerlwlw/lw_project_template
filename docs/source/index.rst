@@ -11,7 +11,6 @@ Welcome to projectlibxx's documentation!
    install
    user guide
    use case
-   tech/autoapi/index
    *
 
 

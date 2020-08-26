@@ -180,7 +180,7 @@ autoapi_generate_api_docs = True
 # get AutoAPI to keep its generated files around as a base to start from 
 # using the autoapi_keep_files option:
 
-autoapi_keep_files = True
+# autoapi_keep_files = True
 
 # configuration options
 autoapi_options = ['members', 
