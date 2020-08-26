@@ -195,6 +195,7 @@ autoapi_python_class_content = 'class'
 
 autoapi_member_order = 'groupwise'
 
+
 # %% --latex settings
 
 latex_engine = 'xelatex'

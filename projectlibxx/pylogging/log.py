@@ -39,13 +39,13 @@ DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
 
 
 def init_log(loger_name='download', 
-             error_log='log/akshare_error.log',
-             info_log='log/akshare_info.log', 
+             error_log='error.log',
+             info_log='info.log', 
              file_mode='w'):
     """init loger instance
     
-    to 'error_log' file, info log to 'info_log file',
-    and all log above info to sys.stdout 
+    'error_log' file, info log to 'info_log file', all log above info 
+    to sys.stdout 
 
     Parameters
     ----------
