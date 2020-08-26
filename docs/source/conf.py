@@ -197,10 +197,15 @@ autoapi_member_order = 'groupwise'
 # %% --latex settings
 
 latex_engine = 'xelatex'
-
 latex_elements = {
-     
+    'preamble': r'''
+    \\hypersetup{unicode=true}
+    \\usepackage{CJKutf8}
+    \\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
+    \\AtEndDocument{\\end{CJK}}
+    '''
 }
+
 
 latex_show_urls = 'footnote'
 
