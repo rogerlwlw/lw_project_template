@@ -5,7 +5,8 @@
     to generate log files for deployed project based on Python Standard Library
     :mod:`logging <python:logging>`
     
-    See also the tech blog `python logging <https://juejin.im/post/6844903692915703815/>`_
+    See also the tech blog 
+    `python logging <https://juejin.im/post/6844903692915703815/>`_
 
 * Key conceipts:
     
@@ -86,7 +87,7 @@ def init_log(logger_name='mylog',
              error_log='error.log',
              all_log='all.log', 
              file_mode='w'):
-    """init logger instance
+    """init and return logger instance
     
 
     Parameters
@@ -95,10 +96,10 @@ def init_log(logger_name='mylog',
         logger name other than 'root'. The default is 'mylog'.
         
     error_log : path
-        The default is 'error.log'. above error level
+        The default is 'error.log'. output above ERROR level msg
         
     all_log : path
-        The default is 'all.log'. above debug level
+        The default is 'all.log'. output above DEBUG level msg
         
     file_mode : str 
         The default is "w", options are ["w", "a"]
@@ -114,7 +115,7 @@ def init_log(logger_name='mylog',
     logger = logging.getLogger(logger_name)
     logger.setLevel(logging.DEBUG)
 
-    LOG_FMT = "%(levelname)s -logger: %(name)s - %(asctime)s - %(message)s"
+    LOG_FMT = "%(levelname)s -logger: %(name)s - %(asctime)s: \n\t %(message)s"
     DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"    
     fmt = logging.Formatter(LOG_FMT, datefmt=DATE_FORMAT)
     
@@ -149,6 +150,8 @@ if __name__ == '__main__':
     
     # logging.disable(logging.NOTSET)
     
-    logger = init_log()
+    logger = init_log(error_log='log/error.log', 
+                      all_log='log/all_log.log')
     logger.info('this is a info message')
     logger.error("this is an error", exc_info=True)
+    logger.exception('this is an exception')

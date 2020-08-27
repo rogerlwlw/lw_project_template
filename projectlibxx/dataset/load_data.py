@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-The :mod:`load_data` module offers function to load 'data' 
-in 'dataset/data' folder, supported formats are 
-['.csv', '.xlsx', '.pkl']. By dault a DataFrame object will be returned. 
-The DataFrame should have a column labled as 'y' as the target class
+Module Descripiton:
+
+    The :mod:`load_data` module offers function :func:`get_local_data` 
+    to load data files as dataframe. Supported formats are ['.csv', '.xlsx', '.pkl']. 
+    
+    By dault a DataFrame object will be returned. The DataFrame should have a 
+    column labled as 'y' as the target class, other columns are features matrix.
+    
+    local demo data matrix can be dumpped to dataset.data folder to be loaded
 
 Created on Tue Dec 10 17:42:49 2019
 
@@ -13,7 +18,7 @@ Created on Tue Dec 10 17:42:49 2019
 import inspect
 import os
 
-from lw_mlearn.utilis.read_write import Objs_management
+from ..utilis.read_write import Objs_management
 
 file_path = os.path.split(inspect.currentframe().f_code.co_filename)[0]
 data_path = os.path.join(file_path, 'data')
@@ -22,13 +27,13 @@ data_path = os.path.join(file_path, 'data')
 def get_local_data(data_name=None, all_datafile=False, rel_path=None):
     '''read data file by filename 
     
-    from `data` folder, extension suffix included
+    from dataset.data folder, extension suffix included
     
     Parameters
     ----------
     data_name : str
-        file name of data to be loaded, by default stored as .csv in 'data' 
-        folder, suffix must be included
+        file name of data to be loaded, by default stored as .csv suffix must 
+        be included
     
     all_datafile : bool
         if all_datafile=True then, load all file in `data` folder
@@ -39,18 +44,18 @@ def get_local_data(data_name=None, all_datafile=False, rel_path=None):
         
     Return 
     ---------
-    list : List
-        if data_name=None,  list of filename that could  be loaded
+    list : dict
+        if data_name=None,  dict of {filename: obj} that could  be loaded
     dataframe : DataFrame
         if data_name is not None, load that data with `data_name`
         
     '''
     reader = Objs_management(data_path)
     if all_datafile is True:
-        lst, _ = reader.read_all(path=rel_path,
+        d_df = reader.read_all(path=rel_path,
                                  suffix=['.csv', '.xlsx', '.pkl'],
                                  subfolder=True)
-        return lst
+        return d_df
 
     available_files = reader.list_all(path=rel_path,
                                       suffix=['.csv', '.xlsx', '.pkl'],
