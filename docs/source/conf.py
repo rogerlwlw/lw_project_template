@@ -90,6 +90,8 @@ templates_path = ['_templates']
 # language = 'zh_CN'
 language = None
 
+html_scaled_image_link = True
+
 #%% -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.

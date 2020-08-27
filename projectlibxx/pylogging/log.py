@@ -1,19 +1,53 @@
 # -*- coding: utf-8 -*-
 """
-`log` module
+* Module Description:
 
-to generate file.log for deployed project based on *Python Standard Lib*
-:mod:`logging <python:logging>`
+    to generate log files for deployed project based on Python Standard Library
+    :mod:`logging <python:logging>`
+    
+    See also the tech blog `python logging <https://juejin.im/post/6844903692915703815/>`_
 
+* Key conceipts:
+    
+    one root logger --> many loggers --> each has many handlers and filters 
+    --> each has :ref:`Log Level <log level>` and formatters
 
-logging level
--------------
-#.    NOTSET(0)
-#.    DEBUG(10)
-#.    INFO(20)
-#.    WARNING(30)
-#.    ERROR(40)
-#.    CRITICAL(50)
+* Logger objects:
+    
+    methond:
+         `debug, info, warning, error, critical, exception, log`; all these 
+         methods have arguments (msg, *args, **kwargs);
+         
+         There are four keyword arguments in kwargs which are inspected: 
+         exc_info, stack_info, stacklevel and extra.
+             
+         exc_info=True it causes exception information to be added 
+         (returned by sys.exc_info())
+         
+         stack_info=true, stack information is added to the logging message, 
+         including the actual logging call
+
+* Best Practice:
+    
+    use custom logger to output logging messages (logger.name other than 'root')
+    
+    use logger method [debug, info, warning, error, critical, exception] to 
+    control log level
+    
+    use handler settings to distribut logging to differenct  log files 
+    
+    use logging.disable(lvl) to mute logging level output
+
+.. _log level:  
+    
+* logging level
+
+    #.    NOTSET(0)
+    #.    DEBUG(10)
+    #.    INFO(20)
+    #.    WARNING(30)
+    #.    ERROR(40)
+    #.    CRITICAL(50)
 
 Created on Wed Aug 26 16:13:35 2020
 
@@ -22,77 +56,99 @@ Created on Wed Aug 26 16:13:35 2020
 import logging
 import os
 
-class INFO_Filter(logging.Filter):
-    '''reconstruct filter method to filter *INFO* logrecord
+class Filter_loglevel(logging.Filter):
+    '''reconstruct filter method to filter logrecord by a certain level
     
     Logrecord has attributes that could be used as filters: [name, levelname]
     
     '''
+    def __init__(self, loglevel):
+        '''
+
+        Parameters
+        ----------
+        loglevel : string
+            log level name.
+
+        '''
+        super().__init__()
+        
+        self.loglevel = loglevel
+    
     def filter(self, record):
-        if record.levelname == "INFO":
+        if record.levelname == self.loglevel:
             return True
         else:
             return False
     
-LOG_FMT = "loger: %(name)s - %(asctime)s - %(levelname)s - %(message)s"
-DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
 
-
-def init_log(loger_name='download', 
+def init_log(logger_name='mylog', 
              error_log='error.log',
-             info_log='info.log', 
+             all_log='all.log', 
              file_mode='w'):
-    """init loger instance
+    """init logger instance
     
-    'error_log' file, info log to 'info_log file', all log above info 
-    to sys.stdout 
 
     Parameters
     ----------
-    loger_name : str
-    
-    error_log : path
-        The default is 'error.log'.
+    logger_name : str
+        logger name other than 'root'. The default is 'mylog'.
         
-    info_log : path
-        The default is 'info.log'.
+    error_log : path
+        The default is 'error.log'. above error level
+        
+    all_log : path
+        The default is 'all.log'. above debug level
         
     file_mode : str 
         The default is "w", options are ["w", "a"]
 
     Return
     -------
-    loger : instance
-        loger instance.
+    logger : instance
+        logger instance.
 
     """
     
-    # get loger instance by loger_name, if not exist, create one
-    loger = logging.getLogger(loger_name)
-    loger.setLevel(logging.DEBUG)
+    # get logger instance by logger_name, if not exist, create one
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.DEBUG)
 
+    LOG_FMT = "%(levelname)s -logger: %(name)s - %(asctime)s - %(message)s"
+    DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"    
+    fmt = logging.Formatter(LOG_FMT, datefmt=DATE_FORMAT)
     
-    if not loger.handlers:
+    if not logger.handlers:
         # make dirs for log files
-        for item in [info_log, error_log]:
-            os.makedirs(os.path.split(item)[0], exist_ok=True) 
-        # error handler to capture error and above error info 
+        for item in [all_log, error_log]:
+            dirs = os.path.split(item)[0]
+            if len(dirs) > 0:
+                os.makedirs(dirs, exist_ok=True) 
+        # Error above handler
         e_h = logging.FileHandler(error_log, file_mode)
         e_h.setLevel(logging.ERROR)
-        e_h.setFormatter(logging.Formatter(LOG_FMT, datefmt=DATE_FORMAT))
-        loger.addHandler(e_h)
+        e_h.setFormatter(fmt)
+        # add error handler 
+        logger.addHandler(e_h)
         
         # info handler only
-        info_h = logging.FileHandler(info_log, file_mode)
-        info_h.setLevel(logging.INFO)
-        info_h.setFormatter(logging.Formatter(LOG_FMT, datefmt=DATE_FORMAT))
-        info_h.addFilter(INFO_Filter())
-        loger.addHandler(info_h)
+        info_h = logging.FileHandler(all_log, file_mode)
+        info_h.setLevel(logging.DEBUG)
+        info_h.setFormatter(fmt)
+        # add info handler 
+        logger.addHandler(info_h)
         
         # streamhandler output all record to sys.stdout
         s_h = logging.StreamHandler()
         s_h.setLevel(logging.INFO)
-        loger.addHandler(s_h)
+        logger.addHandler(s_h)
         
-    return loger
+    return logger
 
+if __name__ == '__main__':
+    
+    # logging.disable(logging.NOTSET)
+    
+    logger = init_log()
+    logger.info('this is a info message')
+    logger.error("this is an error", exc_info=True)

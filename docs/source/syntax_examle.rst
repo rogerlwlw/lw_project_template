@@ -14,6 +14,17 @@
 reST syntax example
 ====================
 
+See `Sphinx documentation <sphinxdoc>`_
+
+sphinx-quickstart build cmd to make documents
+
+build html::
+
+    make html
+
+build pdf::
+
+    make latexpdf
 
 Insert Image
 -------------
@@ -21,7 +32,6 @@ Insert Image
 show inserted image here
 
 .. figure:: _static/_image/showimage.png
-   :scale: 45%
    :align: center
 
    
@@ -40,24 +50,48 @@ collect all todo items:
 cross reference
 ----------------
 
+::
+
+    referenc label starts by underscore "_" like "_lable:"
+    
+    used by ":ref:`label`"
+
 this is a **link** to internal file :doc:`main page <index>`
 
 this is a cross reference link to section :ref:`literal_blocks`
 
 refer to masterdoc :ref:`masterdoc`
 
-this is a link to function :func:`get_local_data <projectlibxx.dataset.load_data.get_local_data>`
 
-this is a link to module :mod:`load_data`
+hyper links
+------------
+::
 
-this is a link to python documentation :class:`zipfile.ZipFile`
-
-refer by **section name**  :ref:`cross reference`
-
+    reference lable starts by underscore "_" like "_lable: links"
+    
+    used by "`label`_", ending with a underscore "_"
 
 this is a hyper link to sphinx doc `sphinxdoc`_
 
 this is a hyper link to `sphinxdoc hyperlink <https://www.sphinx-doc.org/>`_
+
+
+refer to python objects
+-----------------------
+
+Note that you can use a "~pkg.module.function" prefix to only show function 
+name as caption, like the second example below. see 
+`cross reference python objects 
+<https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#python-roles>`_
+
+
+#. this is a link to function :func:`projectlibxx.dataset.load_data.get_local_data`
+
+#. this is a link to function :func:`~projectlibxx.dataset.load_data.get_local_data`
+
+#. this is a link to module :mod:`load_data`
+
+#. this is a link to python documentation :class:`zipfile.ZipFile`
 
     
 Footenote
@@ -145,5 +179,4 @@ Admonitions provided By Docutils
 .. [#f2] Text of the second footnote.
 
 
-.. [citation] 
-    Book1     
+.. [citation] Book1     

@@ -3,9 +3,8 @@ Welcome to projectlibxx's documentation!
 
 
 .. figure:: _static/_image/frontpage.jpg
-   :scale: 40 %
    :align: center
-
+   :scale: 40%
 
 .. toctree::
    :maxdepth: 2
