@@ -178,11 +178,11 @@ autosummary_generate = True
 autosummary_generate_overwrite = True
 
 autodoc_default_options = {
-    'members': None,
+    'members': True,
     'member-order': 'groupwise',
-    'show-inheritance' : None,
+    'show-inheritance' : True,
 }
-autodoc_mock_imports = ["projectlibxx"]
+# autodoc_mock_imports = ["projectlibxx"]
 # %% --latex settings
 
 latex_engine = 'xelatex'

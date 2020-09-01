@@ -1,4 +1,4 @@
-projectlibxx.lwlogging
+﻿projectlibxx.lwlogging
 ======================
 
 .. automodule:: projectlibxx.lwlogging
