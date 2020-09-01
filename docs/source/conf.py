@@ -178,9 +178,9 @@ autosummary_generate = True
 autosummary_generate_overwrite = True
 
 autodoc_default_options = {
-    'members': True,
+    'members': None,
     'member-order': 'groupwise',
-    'show-inheritance' : True,
+    'show-inheritance' : None,
 }
 autodoc_mock_imports = ["projectlibxx"]
 # %% --latex settings
