@@ -129,22 +129,18 @@ intersphinx_mapping = {
 autoapi_dirs = ['../../projectlibxx']
 # autoapi documentation root directory
 autoapi_root = 'autoapi'
-
 autoapi_template_dir = '_template'
 
 # To remove the index page altogether, turn off the autoapi_add_toctree_entry 
 # configuration option:
 
-autoapi_add_toctree_entry = True
-
 # turning the automatic documentation generation off is as easy as 
 # disabling the autoapi_generate_api_docs configuration option:
-
 autoapi_generate_api_docs = True
+autoapi_add_toctree_entry = True
 
 # get AutoAPI to keep its generated files around as a base to start from 
 # using the autoapi_keep_files option:
-
 autoapi_keep_files = False
 
 # configuration options
@@ -154,13 +150,8 @@ autoapi_options = ['members',
                    'inherited-members',
                    'show-inheritance-diagram',
                    ]
-
 autoapi_python_class_content = 'both'
-
 autoapi_member_order = 'groupwise'
-
-
-
 # %%  --autodoc & autosummary
 
 autosummary_generate = False

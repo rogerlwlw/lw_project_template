@@ -3,3 +3,4 @@ recommonmark
 sphinx-autoapi
 sphinx-rtd-theme
 graphviz>=0.14.1
+ipython>=7.12.0
