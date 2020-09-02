@@ -9,18 +9,20 @@ Created on Wed Sep  2 10:24:43 2020
 def fun_add(x, y):
     """add numbers
     
-
+    .. _x-y-z:
+        
     Parameters
     ----------
+        
     x : TYPE
         DESCRIPTION.
     y : TYPE
         DESCRIPTION.
-
+    
     Returns
     -------
     None.
-
+    
     """
     
     return x, y

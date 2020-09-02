@@ -1,6 +1,6 @@
 
-API Document
-============
+AUTO API Document
+==================
 
 ..    
   .. autosummary::

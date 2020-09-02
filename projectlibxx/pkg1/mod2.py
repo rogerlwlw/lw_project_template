@@ -7,7 +7,7 @@ Created on Wed Sep  2 10:24:37 2020
 
 
 class A():
-    """
+    """this is class A
     """
     
     
@@ -42,7 +42,10 @@ class A():
             DESCRIPTION.
         y : TYPE
             DESCRIPTION.
-
+        
+        x-y-z : 
+            :ref:`look here <x-y-z>`
+        
         Returns
         -------
         None.
