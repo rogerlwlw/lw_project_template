@@ -69,9 +69,9 @@ setup(
         'numpy>=1.15.0',
         'pandas>=1.0.0',
         'scikit-learn>=0.22.1',
-        'scipy>=1.1. 0',
+        'scipy>=1.1.0',
         'matplotlib>=3.2.2'
-        'setuptools>=46.1.3',
+        'setuptools',
     ],
     
     extras_require={
