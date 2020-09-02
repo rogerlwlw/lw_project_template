@@ -1,5 +1,5 @@
 sphinx>=3.2.0
-graphviz>=0.14.1
 recommonmark
 sphinx-autoapi
 sphinx-rtd-theme
+graphviz>=0.14.1
