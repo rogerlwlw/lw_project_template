@@ -67,10 +67,16 @@ setup(
     },
     install_requires=[
         'numpy>=1.15.0',
-        'pandas>=0.24.0',
+        'pandas>=1.0.0',
         'scikit-learn>=0.22.1',
-        'scipy>=1.1.0',
-        'matplotlib>=3.0.0',   
+        'scipy>=1.1. 0',
+        'matplotlib>=3.2.2',  
+        
+        'sphinx>=3.2.0',
+        'graphviz>=0.14.1',
+        'recommonmark',
+        'sphinx-autoapi',
+        'sphinx-rtd-theme',
     ],
     
     extras_require={
@@ -97,7 +103,8 @@ setup(
         'hyperparameter optimization', 
         'data science',
         'machine learning', 
-        'Bayesian optimization'
+        'Bayesian optimization',
+        'data mining',
     ],
 )
 

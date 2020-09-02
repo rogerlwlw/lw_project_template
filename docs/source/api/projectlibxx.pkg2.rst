@@ -1,7 +1,7 @@
-﻿projectlibxx.lwlogging
-======================
+projectlibxx.pkg2
+=================
 
-.. automodule:: projectlibxx.lwlogging
+.. automodule:: projectlibxx.pkg2
 
    
    
@@ -27,5 +27,5 @@
    :toctree:
    :recursive:
 
-   projectlibxx.lwlogging.log
+   projectlibxx.pkg2.mod3
 

@@ -1,7 +1,7 @@
-﻿projectlibxx.dataset
-====================
+projectlibxx.pkg1
+=================
 
-.. automodule:: projectlibxx.dataset
+.. automodule:: projectlibxx.pkg1
 
    
    
@@ -27,5 +27,6 @@
    :toctree:
    :recursive:
 
-   projectlibxx.dataset.load_data
+   projectlibxx.pkg1.mod1
+   projectlibxx.pkg1.mod2
 

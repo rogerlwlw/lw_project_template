@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.append(os.path.abspath('../../.'))
+import os
+import sys
+sys.path.append(os.path.abspath('../../.'))
 
 #%% -- Project information -----------------------------------------------------
 
@@ -31,15 +31,11 @@ release = __version__
 rst_epilog = """
 .. |author| replace:: Rogerluo www.baidu.com
 
-.. |pkg| replace:: `projectlibxx`
+.. |pkg| replace:: projectlibxx
 
 """
 
 #%% -- General configuration ---------------------------------------------------
-
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
 
 # master_doc
 # The document name of the “master” document, that is, 
@@ -62,11 +58,9 @@ templates_path = ['_templates']
 # Usually you set "language" from the command line for these cases.
 # language = 'zh_CN'
 language = None
-
 html_scaled_image_link = True
 
 #%% -- Options for HTMLHelp output ---------------------------------------------
-
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'projectlibxx doc'
 
@@ -101,6 +95,9 @@ extensions = [
     "sphinx_rtd_theme",
     "sphinx.ext.todo",
     'sphinx.ext.graphviz',
+    'matplotlib.sphinxext.plot_directive',
+    'IPython.sphinxext.ipython_directive',
+    'IPython.sphinxext.ipython_console_highlighting',
 ]
 
 #%% -- source_suffix --
@@ -139,7 +136,7 @@ intersphinx_mapping = {
 
 autoapi_dirs = ['../../projectlibxx']
 # autoapi documentation root directory
-autoapi_root = 'tech/autoapi'
+autoapi_root = 'autoapi'
 
 autoapi_template_dir = '_template'
 
@@ -165,7 +162,7 @@ autoapi_options = ['members',
                    'inherited-members',
                    ]
 
-autoapi_python_class_content = 'class'
+autoapi_python_class_content = 'both'
 
 autoapi_member_order = 'groupwise'
 
@@ -173,16 +170,17 @@ autoapi_member_order = 'groupwise'
 
 # %%  --autodoc & autosummary
 
-
 autosummary_generate = True
 autosummary_generate_overwrite = True
 
 autodoc_default_options = {
     'members': True,
-    'member-order': 'groupwise',
     'show-inheritance' : True,
+    'member-order': 'groupwise',
+    "show-inheritance-diagram" : True,
 }
-# autodoc_mock_imports = ["projectlibxx"]
+autoclass_content = 'both'
+
 # %% --latex settings
 
 latex_engine = 'xelatex'
@@ -257,20 +255,6 @@ latex_use_xindy = True
 #
 # texinfo_no_detailmenu = False
 
-# -- A random example -----------------------------------------------------
-#%% -- autosectionlabel --
-
-# True to prefix each section label with the name of the document it is in, 
-# followed by a colon. For example, index:Introduction for a section called 
-# Introduction that appears in document index.rst. Useful for avoiding 
-# when the same section heading appears in different documents.
-# autosectionlabel_prefix_document = True
-
-#  If set, autosectionlabel chooses the sections for labeling by its depth.
-#  For example, when set 1 to autosectionlabel_maxdepth, 
-#  labels are generated only for top level sections, and deeper sections 
-#  are not labeled. It defaults to None (disabled).
-# autosectionlabel_maxdepth = None
 
 # %% -- todo options
 todo_include_todos = True
