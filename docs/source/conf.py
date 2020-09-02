@@ -68,15 +68,7 @@ htmlhelp_basename = 'projectlibxx doc'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-# import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
-# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-# html_theme_options = {
-#     "rightsidebar": "true",
-#     "relbarbgcolor": "black"
-# }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -143,12 +135,12 @@ autoapi_template_dir = '_template'
 # To remove the index page altogether, turn off the autoapi_add_toctree_entry 
 # configuration option:
 
-autoapi_add_toctree_entry = False
+autoapi_add_toctree_entry = True
 
 # turning the automatic documentation generation off is as easy as 
 # disabling the autoapi_generate_api_docs configuration option:
 
-autoapi_generate_api_docs = False
+autoapi_generate_api_docs = True
 
 # get AutoAPI to keep its generated files around as a base to start from 
 # using the autoapi_keep_files option:
@@ -160,6 +152,7 @@ autoapi_options = ['members',
                    'show-inheritance', 
                    'show-module-summary', 
                    'inherited-members',
+                   'show-inheritance-diagram',
                    ]
 
 autoapi_python_class_content = 'both'
@@ -170,14 +163,13 @@ autoapi_member_order = 'groupwise'
 
 # %%  --autodoc & autosummary
 
-autosummary_generate = True
-autosummary_generate_overwrite = True
+autosummary_generate = False
+autosummary_generate_overwrite = False
 
 autodoc_default_options = {
     'members': True,
     'show-inheritance' : True,
     'member-order': 'groupwise',
-    "show-inheritance-diagram" : True,
 }
 autoclass_content = 'both'
 
