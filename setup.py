@@ -70,13 +70,8 @@ setup(
         'pandas>=1.0.0',
         'scikit-learn>=0.22.1',
         'scipy>=1.1. 0',
-        'matplotlib>=3.2.2',  
-        
-        'sphinx>=3.2.0',
-        'graphviz>=0.14.1',
-        'recommonmark',
-        'sphinx-autoapi',
-        'sphinx-rtd-theme',
+        'matplotlib>=3.2.2'
+    
     ],
     
     extras_require={
