@@ -70,7 +70,8 @@ setup(
         'pandas>=1.0.0',
         'scikit-learn>=0.22.1',
         'scipy>=1.1.0',
-        'matplotlib>=3.2.2'
+        'matplotlib>=3.2.2',
+        'imbalanced-learn',
     ],
     
     extras_require={
