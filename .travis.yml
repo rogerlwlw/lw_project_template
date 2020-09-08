@@ -24,6 +24,7 @@ jobs:
       
 install: 
     - pip install --user -r requirements.txt 
+    - pip install .
 # 'python' points to Python 2.7 on macOS but points to Python 3.8 on Linux and Windows
 # 'python3' is a 'command not found' error on Windows but 'py' works on Windows only
 script: python3 tests/pytest_projectlibxx.py || python tests/pytest_projectlibxx.py
