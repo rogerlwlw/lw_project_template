@@ -7,6 +7,7 @@ Created on Tue Sep  8 11:06:41 2020
 
 
 from projectlibxx.pkg1 import mod2
+import imblearn
 
 m = mod2.A(1, 2,3)
 print('test OK')
